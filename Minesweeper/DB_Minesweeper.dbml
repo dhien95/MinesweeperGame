@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Minesweeper" Class="DB_MinesweeperDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-096KSGI;Initial Catalog=Minesweeper;Integrated Security=True;Encrypt=False;TrustServerCertificate=True" SettingsObjectName="Minesweeper.Properties.Settings" SettingsPropertyName="MinesweeperConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CapDo" Member="CapDos">
+    <Type Name="CapDo">
+      <Column Name="maCapDo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenCapDo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="soMin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="soCot" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="soDong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CapDo_LuotChoi" Member="LuotChois" ThisKey="maCapDo" OtherKey="maCapDo" Type="LuotChoi" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cell" Member="Cells">
+    <Type Name="Cell">
+      <Column Name="maCell" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cellState" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cellType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="maLuotChoi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LuotChoi_Cell" Member="LuotChoi" ThisKey="maLuotChoi" OtherKey="maLuotChoi" Type="LuotChoi" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LuotChoi" Member="LuotChois">
+    <Type Name="LuotChoi">
+      <Column Name="maLuotChoi" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="thoiGian" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tenNguoiChoi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="maCapDo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LuotChoi_Cell" Member="Cells" ThisKey="maLuotChoi" OtherKey="maLuotChoi" Type="Cell" />
+      <Association Name="CapDo_LuotChoi" Member="CapDo" ThisKey="maCapDo" OtherKey="maCapDo" Type="CapDo" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,22 @@
+﻿Bấm nút Start để bắt đầu chơi game!!
+
+Người chơi khởi đầu với một bảng ô vuông trống thể hiện "bảng chứa mìn".
+Click chuột vào một ô vuông trong bảng. Nếu không may trúng phải ô có mìn (điều này hiếm khi xảy ra) thì người chơi trò chơi kết thúc. Trường hợp thường xảy ra hơn là ô đó không có mìn và một vùng các ô sẽ được mở ra cùng với những con số. Số trên một ô là chỉ số ô có mìn trong cả thảy 8 ô nằm lân cận với ô đó.
+Nếu chắc chắn một ô có mìn, người chơi đánh dấu vào ô đó bằng hình lá cờ (click chuột phải).
+Khi 8 ô lân cận trong một số đã có đủ số mìn mà vẫn còn các ô khác thì những ô đó không có mìn.
+Trò chơi kết thúc với phần thắng dành cho người chơi nếu tìm được tất cả các ô có mìn và mở được tất cả các ô không có mìn.
+
+*Đối với 2 người chơi
+Cách chơi cũng tương tự như chơi 1 người nhưng được đổi lượt tuần tự giữa 2 người chơi.
+Khi người 1 người đặt cờ thì lượt chơi sẽ được nhường lại cho người kia.
+Xác định người chiến thắng khi:
+	Có 1 người click trúng mìn => chiến thắng thuộc về người còn lại.
+	Đặt cờ đúng cho vị trí có mìn cuối cùng => chiến thắng thuộc về người đặt cờ.
+
+**Cách tạo game
+Chọn vị trí các mìn tương ứng với số mìn của mỗi cấp độ và có thể chơi ngay sau đó, hoặc tạo cho một ai đó chơi ngay sau đó.
+
+***Trò chơi chia làm ba Cấp độ:
+Dễ (beginner): bảng ô vuông 8 × 6 trên đó rải 8 quả mìn.
+Trung bình (intermediate): bảng ô vuông 12 × 8 trên đó rải 20 quả mìn.
+Khó (expert): bảng ô vuông 9 × 16 trên đó rải 35 quả mìn.
